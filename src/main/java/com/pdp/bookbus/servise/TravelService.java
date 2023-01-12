@@ -47,7 +47,7 @@ public class TravelService {
 
     private void createExcel(Travel travel, List<Ticket> tickets) {
         XSSFWorkbook workbook = new XSSFWorkbook();
-        try (FileOutputStream outputStream = new FileOutputStream("D:\\Java codes\\model3\\projects\\BookBus_new_version\\src\\main\\resources\\getInformation.xlsx")) {
+        try (FileOutputStream outputStream = new FileOutputStream("src\\main\\resources\\getInformation.xlsx")) {
 
             XSSFSheet travels = workbook.createSheet("travels");
             XSSFRow row = travels.createRow(0);
