@@ -44,7 +44,7 @@ public class ISignInSignUp implements SignInSignUp {
     }
 
     @Override
-    public void signUp() {
+    public User signUp() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter User_Name: ");
         String userName = scanner.nextLine();
@@ -61,5 +61,6 @@ public class ISignInSignUp implements SignInSignUp {
             Storage.userList.add(user1);
             System.out.println("Registration completed successfully!");
         }
+        return user;
     }
 }
