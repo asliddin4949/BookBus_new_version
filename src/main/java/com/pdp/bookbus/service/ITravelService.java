@@ -46,12 +46,6 @@ public class ITravelService implements TravelService{
                         LocalDateTime startTime = getTime("start");
 
                         LocalDateTime finishTime = getTime("finish");
-
-                        Duration between = Duration.between(startTime, finishTime);
-                        if (between.getSeconds() <= 3600) {
-                            System.out.println(" Between start and finish time of travel should be minimum 1 hour .\n Try Again! ");
-                        } else {
-
                             System.out.println("**********  Bus list  **********");
                             Storage.busList.forEach(System.out::println);
                             System.out.print("Select Bus Id:  ");
@@ -92,7 +86,6 @@ public class ITravelService implements TravelService{
                                     Storage.travelList.add(travel);
                                     System.out.println("Successfully added");
                                     break;
-                        }
                     }
                 }
                 else {
