@@ -1,12 +1,15 @@
 package com.pdp.bookbus.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
-@Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Setter
+@Getter
+
 public class Ticket {
     private int id;
     Travel travel;
@@ -20,4 +23,27 @@ public class Ticket {
         currentId++;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ticket ticket = (Ticket) o;
+        return id == ticket.id && seatNumber == ticket.seatNumber && Objects.equals(travel, ticket.travel) && Objects.equals(price, ticket.price) && status == ticket.status;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, travel, price, seatNumber, status);
+    }
+
+    @Override
+    public String toString() {
+        return "Ticket{ " +
+                "id: " + id +
+                ", travel: " + travel +
+                ", price: " + price +
+                ", seatNumber: " + seatNumber +
+                ", status: " + status +
+                '}';
+    }
 }
