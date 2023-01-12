@@ -1,0 +1,28 @@
+plugins {
+    id 'application'
+}
+application {
+    mainClass = 'com.pdp.bookbus.Main'
+}
+
+group 'com.pdp.bookbus'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+jar {
+    manifest {
+        attributes("Main-Class": "com.pdp.bookbus.Main")
+    }
+}
+dependencies {
+    implementation group: 'com.google.code.gson', name: 'gson', version: '2.10.1'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
+    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '5.2.3'
+    implementation group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13.3'
+}
+
+test {
+    useJUnitPlatform()
+}
