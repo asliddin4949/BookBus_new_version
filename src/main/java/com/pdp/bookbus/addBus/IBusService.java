@@ -5,12 +5,12 @@ import com.pdp.bookbus.storage.Storage;
 
 import java.util.Scanner;
 
-public class IAddBus implements BusService {
+public class IBusService implements BusService {
     private static BusService addBus;
 
     public static BusService getInstance() {
         if (addBus == null) {
-            addBus = new IAddBus();
+            addBus = new IBusService();
         }
         return addBus;
     }
