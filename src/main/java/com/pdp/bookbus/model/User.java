@@ -32,4 +32,8 @@ public class User {
     {
         currentId++;
     }
+
+    public static int getCurrentId() {
+        return currentId;
+    }
 }
