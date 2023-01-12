@@ -1,10 +1,14 @@
 package com.pdp.bookbus.model;
-
-import lombok.Getter;
-import lombok.Setter;
-
 import java.util.Objects;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 public class Bus {
@@ -18,17 +22,6 @@ public class Bus {
 
     {
         currentId++;
-    }
-
-    public Bus(int currentId, String name, String number, int numberOfSeats, boolean isActive) {
-        this.id = currentId;
-        this.name = name;
-        this.number = number;
-        this.numberOfSeats = numberOfSeats;
-        this.isActive = isActive;
-    }
-
-    public Bus() {
     }
 
     @Override
