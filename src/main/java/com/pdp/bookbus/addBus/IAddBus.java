@@ -5,10 +5,10 @@ import com.pdp.bookbus.storage.Storage;
 
 import java.util.Scanner;
 
-public class IAddBus implements AddBus {
-    private static AddBus addBus;
+public class IAddBus implements BusService {
+    private static BusService addBus;
 
-    public static AddBus getInstance() {
+    public static BusService getInstance() {
         if (addBus == null) {
             addBus = new IAddBus();
         }
@@ -26,9 +26,7 @@ public class IAddBus implements AddBus {
         if (bus1 == null) {
             System.out.println("Bus seats number: ");
             int seats = scanner.nextInt();
-            System.out.println("Active or no Active (true/false): ");
-            boolean isActive = scanner.hasNext();
-            Bus bus = new Bus(Bus.currentId, busName, busNumber, seats, isActive);
+            Bus bus = new Bus(Bus.currentId, busName, busNumber, seats, true);
             Storage.busList.add(bus);
             System.out.println("Add succesfully");
 

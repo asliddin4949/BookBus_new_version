@@ -1,5 +1,5 @@
 package com.pdp.bookbus.addBus;
 
-public interface AddBus {
+public interface BusService {
     void addBusInAdmin();
 }
